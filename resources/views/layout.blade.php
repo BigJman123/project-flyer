@@ -8,6 +8,7 @@
         
         <title>Project Flyer</title>
         
+        <link rel="stylesheet" href="/css/libs.css">
         <link rel="stylesheet" href="/css/app.css">
         
     </head>
@@ -61,6 +62,20 @@
             @yield('content')
             
         </div>
+        
+        <script src="/js/libs.js"></script>
+        <script type="text/javascript">
+          
+          swal ({
+            
+            title: "Error!",   
+            text: "Here's my error message!",   
+            type: "error",   
+            confirmButtonText: "Cool" 
+            
+          });
+          
+        </script>
         
     </body>
     

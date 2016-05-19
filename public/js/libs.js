@@ -1283,4 +1283,4 @@ exports.colorLuminance = colorLuminance;
   }
 
 })(window, document);
-//# sourceMappingURL=all.js.map
+//# sourceMappingURL=libs.js.map
