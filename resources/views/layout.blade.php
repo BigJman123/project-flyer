@@ -5,10 +5,11 @@
     <head>
         
         <meta charset="UTF-8">
-        
+
         <title>Project Flyer</title>
-        
+
         <link rel="stylesheet" href="/css/libs.css">
+
         <link rel="stylesheet" href="/css/app.css">
         
     </head>
@@ -16,22 +17,22 @@
     <body>
         
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            
-          <div class="container">
-              
-            <div class="navbar-header">
-                
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  
-                    <span class="sr-only">Toggle navigation</span>
-                    
+
+            <div class="container">
+
+              <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                  <span class="sr-only">Toggle navigation</span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
                     <span class="icon-bar"></span>
                     
-                    <span class="icon-bar"></span>
-                    
-                    <span class="icon-bar"></span>
-                    
-                  </button>
+              </button>
                   
               <a class="navbar-brand" href="#">ProjectFlyer</a>
               
@@ -64,18 +65,8 @@
         </div>
         
         <script src="/js/libs.js"></script>
-        <script type="text/javascript">
-          
-          swal ({
-            
-            title: "Error!",   
-            text: "Here's my error message!",   
-            type: "error",   
-            confirmButtonText: "Cool" 
-            
-          });
-          
-        </script>
+
+        @include('flash')
         
     </body>
     
