@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App;
 
@@ -16,8 +16,21 @@ class Flyer extends Model
         'zip',
         'price',
         'description'
-        
     ];
+
+    public function scopeLocatedAt($query, $zip, $street)
+    {
+        $street = str_replace('-', ' ', $street);
+
+        return $query->where(compact('zip', 'street'));
+
+    }
+
+    public function getPriceAttribute($price)
+    {
+        return '$' . number_format($price);
+    }
+
     /**
      * a flyer is composed of many photos
      * 
