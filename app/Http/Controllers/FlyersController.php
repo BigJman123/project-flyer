@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Flyer;
+use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Http\Uploadedfile;
-
 use App\Http\Requests\FlyerRequest;
-
-use App\Flyer;
-
-use App\Photo;
+use App\Http\Requests\AddPhotoRequest;
 
 
 class FlyersController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['show']]);
+
+        parent::__construct();
     }
 
     public function create() 
@@ -42,16 +43,11 @@ class FlyersController extends Controller
         return view('flyers.show', compact('flyer'));
     }
 
-    public function addPhoto($zip, $street, Request $request)
+    public function addPhoto($zip, $street, AddPhotoRequest $request)
     {
-        $this->validate($request, [
-                'photo' => 'required|mimes:jpg,jpeg,png,bmp'
-            ]);
-
-        $photo = $this->makePhoto($request->file('photo'));
+        $photo = Photo::fromFile($request->file('photo'));
 
         Flyer::locatedAt($zip, $street)->addPhoto($photo);
-
     }
 
     public function makePhoto(Uploadedfile $file)

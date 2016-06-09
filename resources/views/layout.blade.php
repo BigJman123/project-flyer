@@ -18,7 +18,7 @@
     
     <body>
         
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
 
             <div class="container">
 
@@ -42,16 +42,23 @@
             
             <div id="navbar" class="collapse navbar-collapse">
                 
-              <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
                   
-                <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Home</a></li>
                 
-                <li><a href="#about">About</a></li>
+                    <li><a href="#about">About</a></li>
                 
-                <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 
-              </ul>
               
+                </ul>
+
+                @if (Auth::check())
+                    <p class="navbar-text navbar-right">
+                        Hello, {{ Auth::user()->name }}
+                    </p>
+                @endif
+                
             </div>
             
             <!--/.nav-collapse -->
